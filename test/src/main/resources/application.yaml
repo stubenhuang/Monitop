@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: monitop-client-test
+
+rocketmq:
+  name-server: 127.0.0.1:9876
+
+dubbo:
+  protocol:
+    name: dubbo
+    port: 9090
+  registry:
+    address: 127.0.0.1
+

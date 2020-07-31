@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: monitop-server
+  redis:
+    host: 127.0.0.1
+    port: 6379
+  mail:
+    host: smtp.stuben.com
+    username: test@stuben.com
+    password: test
+    port: 25
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&useAffectedRows=true&tinyInt1isBit=false&connectTimeout=30000&socketTimeout=30000
+    username: test
+    password: test
+
+server:
+  port: 8080
+
+elasticsearch:
+  cluster:
+    node: 127.0.0.1
+    port: 9200
+
+rocketmq:
+  name-server: 127.0.0.1:9876
+  producer:
+    group: ${spring.application.name}
+
+mybatis:
+  mapper-locations: classpath:mapper/**/*.xml
+
+dubbo:
+  scan:
+    base-packages: com.stuben.monitop.server.facade
+  protocol:
+    name: dubbo
+    port: 9090
+  registry:
+    address: 127.0.0.1
